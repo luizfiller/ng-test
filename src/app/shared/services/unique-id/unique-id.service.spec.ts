@@ -15,7 +15,7 @@ describe(UniqueIdService.name, () => {
   */
   it(`${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} should generate id when called with prefix`, () => {
     // Instancia uma variável com o serviço ou component a ser testado
-    const service = new UniqueIdService;
+    const service = new UniqueIdService();
     const id = service.generateUniqueIdWithPrefix('app');
 
     /*
@@ -29,7 +29,7 @@ describe(UniqueIdService.name, () => {
 
 
   it(`${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} should not generate duplicate IDs when called multiple times`, () => {
-    const service = new UniqueIdService;
+    const service = new UniqueIdService();
     // Set() -> não aceita valores iguais
     const ids = new Set();
 

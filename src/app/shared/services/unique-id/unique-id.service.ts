@@ -11,7 +11,7 @@ export class UniqueIdService {
     }
     const uniqueId = this.generateUniqueId();
     this.numberOfGeneratedIds++;
-    return `${prefix} - ${uniqueId}`
+    return `${prefix}-${uniqueId}`
   }
 
   public getNumberOfGeneratedUniqueIds(): number {
