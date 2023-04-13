@@ -24,7 +24,20 @@ describe(UniqueIdService.name, () => {
     como se fosse um pipe.
     Seu 1º param é o valor a ser comparado a algo
     */
-    expect(id).toContain('app-');
+    expect(id.startsWith('app-')).toBeTrue();
+  });
+
+
+  it(`${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} should not generate duplicate IDs when called multiple times`, () => {
+    const service = new UniqueIdService;
+    // Set() -> não aceita valores iguais
+    const ids = new Set();
+
+    for (let i = 0; i < 50; i++) {
+      ids.add(service.generateUniqueIdWithPrefix('app'));
+
+    }
+    expect(ids.size).toBe(50);
   });
 });
 
